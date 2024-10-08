@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanilla App</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+    <div id="app">
+        <div>
+            <h1>Web Push</h1>
+            <span data-role="toggle-switch"></span>
+            <div class="flex-row">
+                <span data-role="label" class="show-if-allow-notification-off">Notification "OFF"</span>
+                <span data-role="label" class="show-if-allow-notification-on">Notification "ON"</span>
+            </div>
+            <button data-cmd="push-message">PUSH</button>
+        </div>
+    </div>
+    <script src="./js/teriyaki/index.min.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>

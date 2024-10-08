@@ -1,0 +1,125 @@
+@layer reset {
+    * {
+        margin: 0;
+        padding: 0
+    }
+
+    html, body {
+        height: 100%;
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+@layer base-color {
+    :root {
+        --bg-color: #121212;
+        --text-color: #ccc;
+        --primary: #F5405B;
+    }
+}
+
+@layer utilities {
+    .flex-row {
+        display: flex;
+        justify-content: center;
+        gap: 1em;
+    }
+}
+
+@layer components {
+    [data-role="toggle-switch"] {
+        display: inline-block;
+        width: 52px;
+        height: 24px;
+        background: rgba(255,255,255,0.05);
+        border-radius: 12px;
+        position: relative;
+        cursor: pointer;
+    
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            position: absolute;
+            left: 0;
+            top: 0
+        }
+    }   
+    
+    [data-role="label"] {
+        font-size: 0.80em;
+    }
+}
+
+body {
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    position: relative;
+}
+
+#app {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    display: grid;
+    place-content: center;
+    text-align: center;
+
+    [data-role="toggle-switch"] {
+        margin-top: 1em;
+    }
+
+    [data-role="label"] {
+        display: none;
+        margin-top: 0.5em;
+    }
+
+    &.allow-notification-on {
+        [data-role="toggle-switch"] {
+            &::before {
+                left: auto;
+                right: 0;
+            }
+        }
+
+        .show-if-allow-notification-on {
+            display: inline-block;
+        }
+    }
+
+    &.allow-notification-off {
+        [data-role="toggle-switch"] {
+            &::before {
+                background-color: rgba(255,255,255,0.15);
+            }
+        }
+
+        .show-if-allow-notification-off {
+            display: inline-block;
+        }
+    }
+
+    button[data-cmd="push-message"] {
+        padding: 1em 2em;
+        margin-top: 2em;
+        background-color: var(--primary);
+        border: 0;
+        border-radius: 6px;
+        color: #fff;
+        position: relative;
+        cursor: pointer;
+
+        &:active {
+            /* transform: translateY(1px); */
+            top: 1px;
+        }
+    }
+}
+

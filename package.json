@@ -1,0 +1,14 @@
+{
+  "name": "web-push",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "live-server":"live-server",
+    "rabona-tunnel":"rabona-tunnel https -d http://localhost:8080",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
